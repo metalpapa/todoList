@@ -1,0 +1,42 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "run debug",
+      "command": "npm run tsdev",
+      "request": "launch",
+      "type": "node-terminal",
+      "envFile": "${workspaceFolder}/.env"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Jest All",
+      "program": "${workspaceFolder}/node_modules/.bin/jest",
+      "args": [
+        "--runInBand",
+        "--config",
+        "jest.config.json"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "disableOptimisticBPs": true,
+      "windows": {
+        "program": "${workspaceFolder}/node_modules/jest/bin/jest",
+      }
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch via Yarn tsdev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run-script","tsdev"
+      ],
+      "port": 9001,
+      "skipFiles": [
+        "<node_internals>/**"
+      ]
+    }
+  ]
+}
