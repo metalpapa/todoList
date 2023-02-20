@@ -4,10 +4,7 @@ import Item from './item'
 
 export default function title() {
   return (
-    <>
-      <Text style={styles.title}>Todo list:</Text>
-      <Item/>
-    </>
+    <Text style={styles.title}>Todo list:</Text>
   )
 }
 

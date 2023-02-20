@@ -1,11 +1,11 @@
 import { StyleSheet, Text, View, Button } from 'react-native'
 import React from 'react'
 
-const item = () => {
+const item = ({label,index}) => {
     return (
         <View style={{ backgroundColor: "grey" }}>
-            <Text>1</Text>
-            <Text>nombre de la task</Text>
+            <Text>{index}</Text>
+            <Text>{label}</Text>
             <Button
                 onPress={()=>{}}
                 title="Basura"
