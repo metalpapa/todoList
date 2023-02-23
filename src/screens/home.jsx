@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     flex:1
   },
   itemList: {
-    flex: 1
+    flex: 9
   },
   input: {
     flex: 1,
