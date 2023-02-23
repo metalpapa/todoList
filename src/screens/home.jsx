@@ -5,7 +5,8 @@ import Item from '../components/item'
 import Input from '../components/input'
 
 const home = () => {
-  const [items, setitems] = useState([{ label: "almorzar a las 12" }])
+  const [items, setitems] = useState([])
+
   return (
     <View style={styles.container}>
       <Title style={styles.title}></Title>
@@ -16,7 +17,7 @@ const home = () => {
         })}
       </View>
 
-      <Input style={styles.input} />
+      <Input style={styles.input} setitems={setitems}/>
     </View>
   )
 }

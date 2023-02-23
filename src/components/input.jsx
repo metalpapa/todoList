@@ -1,8 +1,7 @@
 import { View, StyleSheet, TextInput, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 
-const input = ({ style }) => {
-
+const input = ({ style, setitems }) => {
 
     const [text, onChangeText] = React.useState(null);
 
@@ -15,7 +14,11 @@ const input = ({ style }) => {
                 placeholder={'agrege una tarea'}
             />
 
-            <TouchableOpacity style={styles.button}>
+            <TouchableOpacity style={styles.button} onPress={()=>{
+              setitems(old => [...old, {label:text}])
+              onChangeText("")
+            } 
+            }>
                 <Image
                     style={styles.add}
                     source={require('../images/add2.png')}
