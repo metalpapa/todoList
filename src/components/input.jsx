@@ -1,7 +1,7 @@
 import { View, StyleSheet, TextInput, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 
-const input = ({ style, setitems }) => {
+const input = ({ style, handleAddItem }) => {
 
     const [text, onChangeText] = React.useState(null);
 
@@ -15,7 +15,7 @@ const input = ({ style, setitems }) => {
             />
 
             <TouchableOpacity style={styles.button} onPress={()=>{
-              setitems(old => [...old, {label:text}])
+              handleAddItem(text)
               onChangeText("")
             } 
             }>

@@ -11,6 +11,10 @@ const home = () => {
     setitems(items.filter((item,index) => index !== itemIndex));
   };
 
+  const handleAddItem = (text) => {
+    setitems(old => [...old, {label:text}])
+  };
+
   return (
     <View style={styles.container}>
       <Title style={styles.title}></Title>
@@ -21,7 +25,7 @@ const home = () => {
         })}
       </View>
 
-      <Input style={styles.input} setitems={setitems}/>
+      <Input style={styles.input} handleAddItem={handleAddItem}/>
     </View>
   )
 }
