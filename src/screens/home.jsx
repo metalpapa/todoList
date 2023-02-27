@@ -7,13 +7,17 @@ import Input from '../components/input'
 const home = () => {
   const [items, setitems] = useState([])
 
+  const handleRemoveItem = (itemIndex) => {
+    setitems(items.filter((item,index) => index !== itemIndex));
+  };
+
   return (
     <View style={styles.container}>
       <Title style={styles.title}></Title>
 
       <View style={styles.itemList} >
         {items.map((item, index) => {
-          return (<Item key={index} index={index + 1} label={item.label}></Item>)
+          return (<Item key={index} index={index + 1} label={item.label} handleRemoveItem={handleRemoveItem}></Item>)
         })}
       </View>
 
